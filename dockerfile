@@ -21,7 +21,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg ma
  && cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d \
  && apt-get install -y postgresql-client-15
 
-RUN wget -q --no-check-certificate https://github.com/lesovsky/pgcenter/releases/download/v0.9.2/pgcenter_0.9.2_linux_amd64.deb \
+RUN wget -O --no-check-certificate https://github.com/lesovsky/pgcenter/releases/download/v0.9.2/pgcenter_0.9.2_linux_amd64.deb \
  && apt-get install pgcenter_0.9.2_linux_amd64.deb \
  && rm pgcenter_0.9.2_linux_amd64.deb
  ## Make sure we have a en_US.UTF-8 locale available

@@ -23,13 +23,13 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg ma
 
 RUN wget -O /tmp/pgcenter.deb https://github.com/lesovsky/pgcenter/releases/download/v0.9.2/pgcenter_0.9.2_linux_amd64.deb --no-check-certificate \
  && apt-get install /tmp/pgcenter.deb \
- && rm -rf /tmp/pgcenter.deb
+ && rm /tmp/pgcenter.deb
  ## Make sure we have a en_US.UTF-8 locale available
  ## && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
  ## Clean up
 
-RUN wget -q --no-check-certificate https://github.com/wal-g/wal-g/releases/download/latest/wal-g.linux-amd64.tar.gz \
- && tar xf wal-g.linux-amd64.tar.gz -C /usr/bin \
- && rm wal-g.linux-amd64.tar.gz
+RUN wget -O /tmp/wal-g.linux-amd64.tar.gz https://github.com/wal-g/wal-g/releases/download/latest/wal-g.linux-amd64.tar.gz --no-check-certificate \
+ && tar xf /tmp/wal-g.linux-amd64.tar.gz -C /usr/bin \
+ && rm /tmp/wal-g.linux-amd64.tar.gz
 
 CMD ["/usr/bin/bash"]

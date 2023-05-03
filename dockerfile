@@ -28,7 +28,7 @@ RUN wget -O /tmp/pgcenter.deb https://github.com/lesovsky/pgcenter/releases/down
  ## && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
  ## Clean up
 
-RUN wget -O /tmp/wal-g.linux-amd64.tar.gz https://github.com/wal-g/wal-g/releases/download/latest/wal-g.linux-amd64.tar.gz --no-check-certificate \
+RUN wget -O /tmp/wal-g.linux-amd64.tar.gz https://github.com/wal-g/wal-g/releases/download/v2.0.1/wal-g-gp-ubuntu-20.04-amd64.tar.gz --no-check-certificate \
  && tar xf /tmp/wal-g.linux-amd64.tar.gz -C /usr/bin \
  && rm /tmp/wal-g.linux-amd64.tar.gz
 
